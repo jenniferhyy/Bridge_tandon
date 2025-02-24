@@ -25,15 +25,15 @@ int main(){
 }
 
 int printMonthCalender(int numOfDays, int startingDay, int& lastDay){
-    cout << "Mon Tue Wed Thur Fri Sat Sun" << endl;
-    for (int i = 0; i < startingDay; i++){
-        cout << "   ";
+    cout << "Mon  Tue  Wed  Thu  Fri  Sat  Sun" << endl;
+    for (int i = 0; i < startingDay-1; i++){
+        cout << "     ";
     }
     for (int k = 1; k <= numOfDays; k++){
         if (k < 10 ) {
-            cout << " " << k << "  ";
+            cout << k << "    ";
         } else {
-            cout << k << "  ";
+            cout << k << "   ";
         }
         if ((k + startingDay - 1) % 7 == 0 && k != numOfDays){
             cout << endl;
