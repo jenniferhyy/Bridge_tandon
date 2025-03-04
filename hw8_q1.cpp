@@ -2,15 +2,23 @@
 using namespace std;
 
 int minInArray(int arr[], int arrSize);
-const int size = 10;
+const int size = 20;
 
 int main(){
-  int arr[size];  
-  cout << "Please enter a list of 10 integers separated by a space: " << endl;
+  int arr[size]; 
+  int min;
+  cout << "Please enter 20 integers separated by a space: " << endl;
   for (int i = 0; i < size; i++){
     cin >> arr[i];
   }
-  cout << "The minimum value is: " << minInArray(arr, size);
+  min = minInArray(arr, size);
+  cout << "The minimum value is: " << min;
+  cout << ", and it is located in the following indices: ";
+  for (int i = 0; i < size; i++){
+    if (min == arr[i]){
+      cout << i << " ";
+    }
+  }
   return 0;
 }
 
