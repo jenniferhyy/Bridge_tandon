@@ -114,7 +114,7 @@ void getPosNums4(int* arr, int arrSize, int** outPosArrPtr, int* outPosArrSizePt
     }
     int index = 0;
     int* outPosArr = new int[posCount];
-    for (int i = 0; i < ArrSize; i++){
+    for (int i = 0; i < arrSize; i++){
       if (arr[i] > 0){
         outPosArr[index] = arr[i];
         index++;
