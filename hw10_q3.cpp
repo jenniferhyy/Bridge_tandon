@@ -60,7 +60,7 @@ void main1(){
             }
         }
     } else {
-        cout << num << " does not appear in the input.";
+        cout << num << " does not show at all in the sequence.";
     }
 
     delete[] arr;
@@ -99,5 +99,7 @@ void main2(){
                 cout << outputvector[i] << ".";
             }
         }
+    } else {
+        cout << num << " does not show at all in the sequence.";
     }
 }
