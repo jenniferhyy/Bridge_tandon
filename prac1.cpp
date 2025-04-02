@@ -84,3 +84,13 @@ void printPineTree(int n, char symbol){
     }
   }
 }
+
+/* hw6(3) approximation of e */
+double eApprox(int n){
+  int factoral = 1.0;
+  int sum = 1.0;
+  for (int i = 1; i <= n; i++){
+    factoral = factoral * i; 
+    sum = 1.0 / factoral;
+  }
+}
