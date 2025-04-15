@@ -87,15 +87,16 @@ int main(){
   curr_bank_balance = previous_balance - total_cashed_checks + total_deposits;
   customer_balance = previous_balance - (total_cashed_checks + total_uncashed_checks) + total_deposits;
     
-  cout << "The total of the checks cashed is: " << total_cashed_checks << endl;
-  cout << "The total of the deposits is: " << total_deposits << endl;
-  cout << "The new balance should be: " << curr_bank_balance << endl;
-  cout << "The new balance if all checks are cashed is: " << customer_balance << endl;
-  cout << "The difference is: " << total_uncashed_checks << endl; 
-  cout << "The list of checks (cashed): " << endl;
+  cout << "The list of checks (cashed) since the last time you balanced your checkbook: " << endl;
   list_of_cashed_checks(checks, number_of_checks);
-  cout << "The list of checks (not cashed): " << endl; 
+  cout << "The list of checks (uncashed) since the last time you balanced your checkbook: " << endl; 
   list_of_uncashed_checks(checks, number_of_checks);
+  cout << "The total sum of the cashed checks is: " << total_cashed_checks << endl;
+  cout << "The total sum of the uncashed checks is: " << total_uncashed_checks << endl;
+  cout << "The total sum of the deposits is: " << total_deposits << endl;
+  cout << "The new account balance according to the bank: " << curr_bank_balance << endl;
+  cout << "The new balance if all checks are cashed is: " << customer_balance << endl;
+  cout << "Amount the actual balance differs from what the bank says the new balance is: " << total_uncashed_checks << endl; 
 
   delete[] checks;
   delete[] deposits;
@@ -184,8 +185,8 @@ istream &operator>>(istream &ins, Money &amount){
     return ins;
 }
 
-int digit_to_int(char c){
-    return (static_cast<int>(c) - static_cast<int>('0'));
+int digit_to_int(char c) {
+    return c - '0';
 }
 
 ostream &operator<<(ostream &outs, const Money &amount){
@@ -294,7 +295,7 @@ Money get_total_deposits(const Money deposits[], int number_of_deposits){
 }
 
 void list_of_cashed_checks(const Check checks[], int number_of_checks){
-  for (int i = 0; i < number_of_checks; i++){
+    for (int i = 0; i < number_of_checks; i++){
     if (checks[i].get_is_cashed()){
       cout << checks[i] << endl;
     }
