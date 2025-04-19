@@ -17,6 +17,9 @@ class Measurement {
         int getFeet() const {return feet;} 
         int getInches() const {return inches;}
         Measurement operator+(const Measurement& rhs); // too long to put constructor here
+        Measurement& operator++();
+        Measurement++ (int);
+        J
 };
 Measurement Measurement::operator+(const Measurement& rhs){
     Measurement temp;
